@@ -1,0 +1,8 @@
+<h2><%= @task.details %></h2>
+<%= check_box_tag("accept", value = "1", checked = @task.completed, options = {}) %>
+<%= link_to "Delete",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+<p><%= link_to "Edit task", "http://localhost:3000/tasks/#{@task.id}/edit" %></p>
+<p><%= link_to "back to home", "http://localhost:3000/tasks" %></p>
